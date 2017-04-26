@@ -1,0 +1,10 @@
+FROM centos:centos7
+MAINTAINER goern@redhat.com
+RUN yum -y update; yum clean all
+#RUN yum -y install openssh-server 
+USER test
+CMD /bin/bash
+
+EXPOSE 5432
+
+ENTRYPOINT sshd
